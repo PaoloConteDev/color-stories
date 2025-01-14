@@ -10,12 +10,16 @@ const ColorGenerator = () => {
     const colorFont = "40px Arial, sans-serif";
     const descriptionFont = "40px Arial, sans-serif";
 
+    const capitalizeWord = (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+
     useEffect(() => {
         const fetchJsonData = async (fileName, key, setFunction) => {
             try {
                 const response = await fetch(`/${fileName}`);
                 const data = await response.json();
                 setFunction(data[key]); // Access the key to retrieve the array
+                const capitalizedWords = data[key].map(capitalizeWord);
+                setFunction(capitalizedWords);
             } catch (error) {
                 console.error(`Failed to load ${fileName}:`, error);
             }
