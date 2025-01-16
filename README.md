@@ -5,11 +5,11 @@ Let your mind explore the unexpected connections between color and words.
 
 ![ColorStories_output](https://github.com/user-attachments/assets/29a34500-088a-4af7-b9d6-18fafa2e410c)
 
-To execute locally:
--npm install
--npm run build
--npm run preview
--go to self-hosted address
--enjoy!
+# To execute locally: <br />
+-npm install <br />
+-npm run build <br />
+-npm run preview <br />
+-go to self-hosted address <br />
+-enjoy! <br />
 
-## Made with React + Vite
+#### Made with React + Vite
