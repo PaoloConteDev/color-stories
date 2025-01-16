@@ -10,6 +10,9 @@ const ColorGenerator = () => {
     const colorFont = "40px Arial, sans-serif";
     const descriptionFont = "40px Arial, sans-serif";
 
+    // Add a vertical padding parameter to adjust the spacing inside the white bar
+    const verticalPadding = 60; // You can adjust this value to your needs
+
     const capitalizeWord = (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 
     useEffect(() => {
@@ -63,22 +66,22 @@ const ColorGenerator = () => {
 
         // Text rendering logic
         ctx.fillStyle = "black";
-        const centerX = canvas.width / 2; // Center X coordinate
-        const textYStart = canvas.height - barHeight + 50; // Start drawing text inside the white bar
+        const textXStart = 20; // Left margin
+        const textYStart = canvas.height - barHeight + verticalPadding; // Adjusted to account for verticalPadding
 
         // Draw title
         ctx.font = titleFont;
-        ctx.textAlign = "center"; // Center align the text
-        ctx.fillText("Color Stories", centerX, textYStart);
+        ctx.textAlign = "left"; // Left align the text
+        ctx.fillText("Color Stories", textXStart, textYStart);
 
         // Draw color hex code
         ctx.font = colorFont;
-        ctx.fillText(color, centerX, textYStart + 50);
+        ctx.fillText(color, textXStart, textYStart + 50);
 
         // Draw adjective and noun combination
         const description = `${adjective} ${noun}`;
         ctx.font = descriptionFont;
-        ctx.fillText(description, centerX, textYStart + 100);
+        ctx.fillText(description, textXStart, textYStart + 100);
 
         // Set the background image of the color box
         setImageData(canvas.toDataURL());
